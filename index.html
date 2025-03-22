@@ -38,25 +38,29 @@
             max-width: 500px;
         }
 
+        .fase-1, .fase-2, .fase-3, .fase-4 {
+            display: none;
+        }
+
         .fase-1 {
+            display: block;
+        }
+
+        .fase-1, .fase-3 {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 15px;
-            padding: 10px;
-        }
-
-        .fase-1 h1 {
-            margin-bottom: 10px;
-        }
-
-        .fase-2 {
-            display: none;
         }
 
         .fase-3 {
+            display: none;
             text-align: center;
-            padding: 10px;
+        }
+
+        .fase-3 .container {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
         }
 
         .fase-3 h1 {
@@ -66,12 +70,21 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
 
-        .fase-3 .buttons {
-            margin-top: 15px;
+        #naoFinal {
+            position: relative;
         }
 
-        .fase-4 {
-            display: none;
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        #mensagem {
+            color: #ff69b4;
+            font-style: italic;
+            margin-top: 10px;
         }
 
         .options-grid {
@@ -123,14 +136,6 @@
             font-size: clamp(1.5rem, 5vw, 2rem);
         }
 
-        .buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            order: 1;
-        }
-
         button {
             padding: clamp(8px, 2vw, 12px) clamp(16px, 4vw, 25px);
             font-size: clamp(14px, 3vw, 16px);
@@ -149,13 +154,6 @@
             background: linear-gradient(45deg, #00bfff, #1e90ff);
             color: white;
             position: relative;
-        }
-
-        #mensagem {
-            color: #ff69b4;
-            font-style: italic;
-            margin-top: 10px;
-            order: 2;
         }
 
         .todos-option {
@@ -509,6 +507,25 @@
 
         document.getElementById('naoFinal').addEventListener('click', () => {
             mensagem.textContent = "😔";
+        });
+
+        // Função para mover o botão aleatoriamente
+        function moveButton(button) {
+            const x = Math.random() * (window.innerWidth - button.offsetWidth);
+            const y = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.position = 'fixed';
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+
+        // Adiciona o efeito de movimento no botão Não da fase 1
+        document.getElementById('naoBtn').addEventListener('mouseover', function() {
+            moveButton(this);
+        });
+
+        // Adiciona o efeito de movimento no botão Não da fase 3
+        document.getElementById('naoFinal').addEventListener('mouseover', function() {
+            moveButton(this);
         });
     </script>
 </body>
