@@ -7,7 +7,7 @@
     <style>
         body {
             margin: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -15,10 +15,12 @@
             background-image: url('images/back.jpg');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             font-family: 'Arial', sans-serif;
             padding: 20px;
             box-sizing: border-box;
             transition: background-image 1s ease;
+            overflow-y: auto;
         }
 
         .background-decker {
@@ -37,6 +39,9 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             width: 90%;
             max-width: 500px;
+            margin: 20px auto;
+            overflow-y: auto;
+            max-height: 90vh;
         }
 
         h1 {
@@ -83,9 +88,10 @@
 
         .options-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
             margin-top: 20px;
+            padding: 10px;
         }
 
         .option-card {
@@ -95,6 +101,9 @@
             cursor: pointer;
             transition: transform 0.2s;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .option-card:hover {
@@ -106,6 +115,7 @@
             height: 150px;
             object-fit: cover;
             border-radius: 5px;
+            margin-bottom: 10px;
         }
 
         .option-card p {
@@ -153,20 +163,27 @@
         }
 
         @media (max-width: 480px) {
-            .container {
-                padding: 1.5rem;
+            body {
+                padding: 10px;
             }
             
-            .buttons {
-                gap: 15px;
+            .container {
+                padding: 1rem;
+                margin: 10px auto;
+                max-height: 85vh;
+            }
+            
+            .options-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .option-card img {
+                height: 120px;
             }
             
             #mensagem {
                 font-size: 14px;
-            }
-
-            .options-grid {
-                grid-template-columns: 1fr;
             }
         }
 
