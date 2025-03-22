@@ -29,7 +29,7 @@
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.8);
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
@@ -39,7 +39,10 @@
         }
 
         .fase-1 {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
         }
 
         .fase-2 {
@@ -109,6 +112,7 @@
             justify-content: center;
             margin-top: 20px;
             flex-wrap: wrap;
+            order: 1;
         }
 
         button {
@@ -134,8 +138,9 @@
 
         #mensagem {
             color: #ff69b4;
-            margin-top: 20px;
             font-style: italic;
+            margin-top: 10px;
+            order: 2;
         }
 
         .todos-option {
@@ -323,6 +328,7 @@
                 <button id="simBtn">Sim</button>
                 <button id="naoBtn">Não</button>
             </div>
+            <p id="mensagem"></p>
         </div>
 
         <div class="fase-2">
@@ -373,7 +379,6 @@
         <div id="tartarugaAmor" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
             <img src="images/tortugaamor.jpg" alt="Tartaruga Amor" style="max-width: 300px;">
         </div>
-        <p id="mensagem"></p>
     </div>
 
     <script>
