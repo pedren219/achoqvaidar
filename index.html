@@ -519,13 +519,16 @@
         }
 
         // Adiciona o efeito de movimento no botão Não da fase 1
-        document.getElementById('naoBtn').addEventListener('mouseover', function() {
+        document.getElementById('naoBtn').addEventListener('click', function(e) {
+            e.preventDefault(); // Previne o comportamento padrão do clique
             moveButton(this);
         });
 
         // Adiciona o efeito de movimento no botão Não da fase 3
-        document.getElementById('naoFinal').addEventListener('mouseover', function() {
+        document.getElementById('naoFinal').addEventListener('click', function(e) {
+            e.preventDefault(); // Previne o comportamento padrão do clique
             moveButton(this);
+            mensagem.textContent = "😔";
         });
     </script>
 </body>
