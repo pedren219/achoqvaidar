@@ -7,16 +7,25 @@
     <style>
         body {
             margin: 0;
-            padding: 0;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             background-image: url('images/back.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
             font-family: 'Arial', sans-serif;
+            padding: 20px;
             box-sizing: border-box;
-            transition: background-image 1s ease;
-            overflow-y: auto;
+        }
+
+        .background-decker {
+            background-image: url('images/deckebus.jpg') !important;
+        }
+
+        .background-fim {
+            background-image: url('images/backfim.jpg') !important;
         }
 
         .container {
@@ -27,26 +36,29 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             width: 90%;
             max-width: 500px;
-            margin: 20px auto;
         }
 
-        .fase-1, .fase-2, .fase-3, .fase-4 {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
+        .fase-1 {
+            display: block;
+        }
+
+        .fase-2 {
+            display: none;
+        }
+
+        .fase-3 {
+            display: none;
+        }
+
+        .fase-4 {
+            display: none;
         }
 
         .options-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            width: 100%;
-            padding: 10px;
-            box-sizing: border-box;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 20px;
         }
 
         .option-card {
@@ -56,25 +68,32 @@
             cursor: pointer;
             transition: transform 0.2s;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         .option-card img {
             width: 100%;
-            height: 150px;
+            height: 120px;
             object-fit: cover;
             border-radius: 5px;
-            margin-bottom: 10px;
         }
 
-        .background-decker {
-            background-image: url('images/deckebus.jpg') !important;
+        .option-card p {
+            margin: 10px 0;
+            color: #ff69b4;
         }
 
-        .background-fim {
-            background-image: url('images/backfim.jpg') !important;
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         h1 {
