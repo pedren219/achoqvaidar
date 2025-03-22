@@ -36,27 +36,33 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             width: 90%;
             max-width: 500px;
+            position: relative;
+        }
+
+        .fase-1, .fase-2, .fase-3, .fase-4 {
+            display: none;
         }
 
         .fase-1 {
+            display: block;
+        }
+
+        .fase-1 .content {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 15px;
-            padding: 10px;
         }
 
-        .fase-1 h1 {
-            margin-bottom: 10px;
-        }
-
-        .fase-2 {
-            display: none;
+        .fase-3 .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
         }
 
         .fase-3 {
             text-align: center;
-            padding: 10px;
         }
 
         .fase-3 h1 {
@@ -66,12 +72,22 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
 
-        .fase-3 .buttons {
-            margin-top: 15px;
+        .fase-3 .container {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
         }
 
-        .fase-4 {
-            display: none;
+        #mensagem {
+            color: #ff69b4;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .options-grid {
@@ -123,14 +139,6 @@
             font-size: clamp(1.5rem, 5vw, 2rem);
         }
 
-        .buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            order: 1;
-        }
-
         button {
             padding: clamp(8px, 2vw, 12px) clamp(16px, 4vw, 25px);
             font-size: clamp(14px, 3vw, 16px);
@@ -149,13 +157,6 @@
             background: linear-gradient(45deg, #00bfff, #1e90ff);
             color: white;
             position: relative;
-        }
-
-        #mensagem {
-            color: #ff69b4;
-            font-style: italic;
-            margin-top: 10px;
-            order: 2;
         }
 
         .todos-option {
@@ -331,12 +332,14 @@
     <div class="tartaruga-amor-container"></div>
     <div class="container">
         <div class="fase-1">
-            <h1>Você gosta de mim? 💕</h1>
-            <div class="buttons">
-                <button id="simBtn">Sim</button>
-                <button id="naoBtn">Não</button>
+            <div class="content">
+                <h1>Você gosta de mim? 💕</h1>
+                <div class="buttons">
+                    <button id="simBtn">Sim</button>
+                    <button id="naoBtn">Não</button>
+                </div>
+                <p id="mensagem"></p>
             </div>
-            <p id="mensagem"></p>
         </div>
 
         <div class="fase-2">
@@ -369,10 +372,12 @@
         </div>
 
         <div class="fase-3">
-            <h1>E se esse double decker bus batesse na gente hein hein hein estaria tudo bem ????</h1>
-            <div class="buttons">
-                <button id="simFinal">Sim</button>
-                <button id="naoFinal">Não</button>
+            <div class="content">
+                <h1>E se esse double decker bus batesse na gente hein hein hein estaria tudo bem ????</h1>
+                <div class="buttons">
+                    <button id="simFinal">Sim</button>
+                    <button id="naoFinal">Não</button>
+                </div>
             </div>
         </div>
 
@@ -380,13 +385,13 @@
             <h1>Obrigado por fazer meus dias melhores</h1>
             <div class="mensagem-final">TE AMO ❤️</div>
         </div>
+    </div>
 
-        <div id="tartaruga" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
-            <img src="images/tortuga.jpg" alt="Tartaruga Triste" style="max-width: 300px;">
-        </div>
-        <div id="tartarugaAmor" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
-            <img src="images/tortugaamor.jpg" alt="Tartaruga Amor" style="max-width: 300px;">
-        </div>
+    <div id="tartaruga" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
+        <img src="images/tortuga.jpg" alt="Tartaruga Triste" style="max-width: 300px;">
+    </div>
+    <div id="tartarugaAmor" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
+        <img src="images/tortugaamor.jpg" alt="Tartaruga Amor" style="max-width: 300px;">
     </div>
 
     <script>
@@ -472,7 +477,7 @@
         });
 
         document.getElementById('simFinal').addEventListener('click', () => {
-            fase3.innerHTML = '<h1 style="font-size: clamp(2.5rem, 5vw, 4rem); color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); padding: 20px;">TO DIE BY YOUR SIDE IS SUCH A HEAVENLY WAY TO DIE ❤️❤️❤️❤️❤️</h1>';
+            fase3.innerHTML = '<div class="content"><h1 style="font-size: clamp(2.5rem, 5vw, 4rem); color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); padding: 20px;">TO DIE BY YOUR SIDE IS SUCH A HEAVENLY WAY TO DIE ❤️❤️❤️❤️❤️</h1></div>';
             mensagem.textContent = "";
             
             setTimeout(() => {
