@@ -12,7 +12,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-image: url('./images/back.jpg');
+            background-image: url('images/back.jpg');
             background-size: cover;
             background-position: center;
             font-family: 'Arial', sans-serif;
@@ -22,11 +22,11 @@
         }
 
         .background-decker {
-            background-image: url('./images/deckebus.jpg') !important;
+            background-image: url('images/deckebus.jpg') !important;
         }
 
         .background-fim {
-            background-image: url('./images/backfim.jpg') !important;
+            background-image: url('images/backfim.jpg') !important;
         }
 
         .container {
@@ -280,7 +280,7 @@
 </head>
 <body>
     <audio id="bgMusic" loop>
-        <source src="./som/There Is a Light That Never Goes Out (2011 Remaster).mp3" type="audio/mp3">
+        <source src="som/There Is a Light That Never Goes Out (2011 Remaster).mp3" type="audio/mp3">
     </audio>
     <div class="tartaruga-amor-container"></div>
     <div class="container">
@@ -296,23 +296,23 @@
             <h1>Qual dessas opções é literalmente nós? </h1>
             <div class="options-grid">
                 <div class="option-card">
-                    <img src="./images/us1.jpg" alt="Opção 1">
+                    <img src="images/us1.jpg" alt="Opção 1">
                     <p>Opção 1</p>
                 </div>
                 <div class="option-card">
-                    <img src="./images/us2.jpg" alt="Opção 2">
+                    <img src="images/us2.jpg" alt="Opção 2">
                     <p>Opção 2</p>
                 </div>
                 <div class="option-card">
-                    <img src="./images/us3.jpg" alt="Opção 3">
+                    <img src="images/us3.jpg" alt="Opção 3">
                     <p>Opção 3</p>
                 </div>
                 <div class="option-card">
-                    <img src="./images/us4.jpeg" alt="Opção 4">
+                    <img src="images/us4.jpeg" alt="Opção 4">
                     <p>Opção 4</p>
                 </div>
                 <div class="option-card">
-                    <img src="./images/us5.jpg" alt="Opção 5">
+                    <img src="images/us5.jpg" alt="Opção 5">
                     <p>Opção 5</p>
                 </div>
                 <div class="option-card todos-option">
@@ -335,10 +335,10 @@
         </div>
 
         <div id="tartaruga" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
-            <img src="./images/tortuga.jpg" alt="Tartaruga Triste" style="max-width: 300px;">
+            <img src="images/tortuga.jpg" alt="Tartaruga Triste" style="max-width: 300px;">
         </div>
         <div id="tartarugaAmor" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
-            <img src="./images/tortugaamor.jpg" alt="Tartaruga Amor" style="max-width: 300px;">
+            <img src="images/tortugaamor.jpg" alt="Tartaruga Amor" style="max-width: 300px;">
         </div>
         <p id="mensagem"></p>
     </div>
@@ -452,7 +452,7 @@
                         tartaruga.style.left = Math.random() * 90 + '%'; 
                         tartaruga.style.top = Math.random() * 90 + '%';   
                         tartaruga.style.transform = `rotate(${Math.random() * 360}deg)`;  
-                        tartaruga.innerHTML = '<img src="./images/tortugaamor.jpg" alt="Tartaruga Amor">';
+                        tartaruga.innerHTML = '<img src="images/tortugaamor.jpg" alt="Tartaruga Amor">';
                         
                         container.appendChild(tartaruga);
                         count++;
